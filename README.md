@@ -12,7 +12,8 @@ FriendlyPlant is a free App where users can share their own plants, knowledge, s
 - **logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
 - **Plants Section** - As a user I want to see all the plants options that other users uploaded.
 - **Plants Info** - As a user I want to see all plant details.
-- **My profile** - As a user I want to see my profile, upload it and upload my plants
+- **Plants Form** - As a user I want to create, edit and delete plants.
+- **My profile** - As a user I want to see and edit my profile
 - **About Us** - As a user I want to read about the owners of the app.
 
 ## Backlog
@@ -50,26 +51,28 @@ Homepage
 - POST /auth/logout
   - body: (empty)
 - GET /my-profile
-  - renders /plants/edit
-  - renders /plants/create
+  - Renders profile/view
+  - URL /plants/edit
+  - URL /plants/create
   
 - GET /plants
-  - renders the plants list + the create form
+  - renders the plants list + 
+-Get /plants/create
+  - render plants-form-create (plantilla)
 - POST /plants/create 
   - body: 
     - name
     - image
     - description
 - POST /plants/edit 
-  - Render user page
+  - Render plant-form-edit(plantilla)
   - Update and add plant info
 
 - GET /plants/:id
-  - renders the same page only changing the state
-  - includes the list of plants
-  - attend favorite button 
-- POST /events/:id/attend 
-  - body: (empty - the user is already stored in the session)
+  - renders the view and details of the plants (plants-view)
+  - favorite button 
+- POST /plants/:id/favourites
+-Add id plant to user profile
   
 -GET /AboutUs
   - renders About Us page 
@@ -80,15 +83,17 @@ Homepage
   -email: String
   -username: String
   -password: String
+  -createdPlants: [ { type: Schema.Types.ObjectId, ref: "Plant" } ]
 ```
 ```
 -Plant model
-  -PlantName: String
-  -Description: String
-  -Image: <img>
-  -Date: date
-  -Owner: String
-  -Location: String
+  
+  -plantName: String
+  -description: String
+  -image: String
+  -date: Date
+  -owner: { type: Schema.Types.ObjectId, ref: "User" }
+  -location: String
   ```
   ## Links
 
