@@ -75,12 +75,13 @@ Homepage
   - renders About Us page 
   
   ## Models
-
+```
 -User model
   -email: String
   -username: String
   -password: String
-
+```
+```
 -Plant model
   -PlantName: String
   -Description: String
@@ -88,7 +89,7 @@ Homepage
   -Date: date
   -Owner: String
   -Location: String
-  
+  ```
   ## Links
 
 ### Trello
