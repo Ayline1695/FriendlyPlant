@@ -79,20 +79,28 @@ Homepage
   - renders About Us page 
   
   ## VIEWS
+  ```
   -user-view
     -profile
     -favourites
+  ```
+  ```
   -plants-view
     -plants-list
     -plants-details
     -plants-create-form
     -plants-edit-form
+   ```
+   ```
   -Auth-view
     -login
     -signup
+   ```
+   ```
   -Index
   -Layout
   -Error
+  ```
   
   ## Models
 ```
