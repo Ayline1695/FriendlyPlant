@@ -23,6 +23,7 @@ User profile:
 - Add comments about other users's plants
 - See other users profile
 - Add Favourites section on user profile
+-Edit profile
 
 Homepage
 - English version
@@ -76,6 +77,22 @@ Homepage
   
 -GET /AboutUs
   - renders About Us page 
+  
+  ## VIEWS
+  -user-view
+    -profile
+    -favourites
+  -plants-view
+    -plants-list
+    -plants-details
+    -plants-create-form
+    -plants-edit-form
+  -Auth-view
+    -login
+    -signup
+  -Index
+  -Layout
+  -Error
   
   ## Models
 ```
