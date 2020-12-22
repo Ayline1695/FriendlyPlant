@@ -1,0 +1,33 @@
+{
+  "name": "FriendlyPlant",
+  "version": "1.0.0",
+  "description": "## Description FriendlyPlant is a free App where users can share their own plants, knowledge, seeds and much more!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon npm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayline1695/FriendlyPlant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayline1695/FriendlyPlant/issues"
+  },
+  "homepage": "https://github.com/Ayline1695/FriendlyPlant#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0"
+  }
+}
