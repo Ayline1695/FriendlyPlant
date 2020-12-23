@@ -51,13 +51,13 @@ app.use(function (req, res, next) {
 })
 
 // Routes
-// const indexRouter = require('./routes/index');
+ const indexRouter = require('./routes/index.route');
 // const usersRouter = require('./routes/users.route');
 // const plantsRouter = require('./routes/plants.route');
-// const authRouter = require('./routes/auth.route');
-// app.use('/', indexRouter);
+ const authRouter = require('./routes/auth.route');
+ app.use('/', indexRouter);
 // app.use('/', usersRouter);
-// app.use('/', authRouter);
+ app.use('/', authRouter);
 // app.use('/', plantsRouter);
 
 
@@ -80,4 +80,5 @@ app.use((err, req, res, next) => {
   res.render("error");
 });
 
-module.exports = app;
+
+app.listen(process.env.PORT, () => console.log("server running on port 4000"));
