@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {
-    getPlants,
+    getPlants,getPlant
   } = require("../controllers/plants.controller");
 
 function isLoggedIn(req, res, next) {
@@ -11,6 +11,7 @@ function isLoggedIn(req, res, next) {
 
 router
 .get("/list", isLoggedIn, getPlants)
+.get("/list/:plantId",isLoggedIn, getPlant)
 
 
 module.exports = router;
