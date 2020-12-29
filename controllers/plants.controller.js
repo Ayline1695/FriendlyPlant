@@ -10,5 +10,16 @@ const getPlants = async (req,res)  => {
       }
   };
 
+  const getPlant = async (req, res) => {
+    try {
+      const { plantId } = req.params;
+      const plants = await Plants.findById(plantId);
+      console.log(plants);
+      res.render("plants/details.hbs", plants);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   module.exports = {
-    getPlants}
+    getPlants,getPlant}

@@ -32,11 +32,11 @@ const editFormOptions = (plantsId) => ({
   restMethod: "PATCH",
 });
 
-const getPlants = async (req, res) => {
+const getPlant = async (req, res) => {
   try {
     const { plantsId } = req.params;
     const plants = await Plants.findById(plantsId).lean();
-    res.render("plants-detail", {
+    res.render("details", {
       ...editFormOptions(plantsId),
       ...plants,
     });
@@ -65,7 +65,7 @@ const updatePlants = async (req, res) => {
       image,
       description,
     });
-    res.redirect(`/plants/${plantsId}`);
+    res.redirect(`/list/${plantsId}`);
   } catch (err) {
     console.log(err);
   }
@@ -76,7 +76,7 @@ const deletePlants = async (req, res) => {
     const { plantsId } = req.params;
     const deletedplants = await Plants.findByIdAndDelete(plantsId);
     console.log("deleted plants", deletedplants);
-    res.redirect("/plants");
+    res.redirect("/list");
   } catch (err) {
     console.log(err);
   }
@@ -84,7 +84,7 @@ const deletePlants = async (req, res) => {
 
 module.exports = {
   getPlants,
-  getPlants,
+  getPlant,
   createPlants,
   updatePlants,
   deletePlants,

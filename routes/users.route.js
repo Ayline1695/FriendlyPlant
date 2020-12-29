@@ -8,6 +8,7 @@ function isLoggedIn(req, res, next) {
 
   const {
     getPlants,
+    getPlant,
     createPlants,
     updatePlants,
     deletePlants,
@@ -16,9 +17,9 @@ function isLoggedIn(req, res, next) {
   
   router
     .get("/", isLoggedIn, getPlants)
-    .get("/:plantsId", isLoggedIn, getPLants)
+    .get("/:plantsId", isLoggedIn, getPlant)
     .post("/", createPlants)
-    .patch("/:celebrityId", isLoggedIn, updatePlants)
-    .delete("/:celebrityId", isLoggedIn, deletePlants);
+    .patch("/:plantsId", isLoggedIn, updatePlants)
+    .delete("/:plantsId", isLoggedIn, deletePlants);
   
   module.exports = router;
