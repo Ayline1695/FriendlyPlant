@@ -29,6 +29,9 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+// partial
+hbs.registerPartials(`${__dirname}/views/partials/`);
+
 // Session middleware
 app.use(
   session({
@@ -53,12 +56,12 @@ app.use(function (req, res, next) {
 // Routes
  const indexRouter = require('./routes/index.route');
 // const usersRouter = require('./routes/users.route');
-// const plantsRouter = require('./routes/plants.route');
+ const plantsRouter = require('./routes/plants.route');
  const authRouter = require('./routes/auth.route');
  app.use('/', indexRouter);
 // app.use('/', usersRouter);
  app.use('/', authRouter);
-// app.use('/', plantsRouter);
+ app.use('/', plantsRouter);
 
 
 
