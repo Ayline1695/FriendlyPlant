@@ -67,10 +67,10 @@ router.post('/login', (req, res, next) => {
   });
 
   
-  router.get('/user', (req, res) => {
-      console.log(req.session.currentUser)
-    res.render('user/profile', { userInSession: req.session.currentUser });
-  });
+// router.get('/profile', (req, res) => {
+//     console.log(req.session.currentUser)
+//   res.render('user/profile', { userInSession: req.session.currentUser });
+// });
   
 //  const privatePages = (req,res,next) => {
 //    const verifySesion = req.session.currentUser
