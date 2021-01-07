@@ -1,5 +1,9 @@
 <h1>Private page</h1>
 
-{{#if message}}
-  <p>{{message}} {{user}}</p>
+{{#if users}}
+  <h2>Welcome, {{ users.username }}!</h2>
+  <p>This is your profile page my friend!</p>
+  <button>
+    <a href="/favourites">Reload the page</a>
+  </button>
 {{/if}}

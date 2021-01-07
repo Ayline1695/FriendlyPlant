@@ -7,19 +7,19 @@ function isLoggedIn(req, res, next) {
 
 
   const {
-    getPlants,
-    getPlant,
-    createPlants,
-    updatePlants,
-    deletePlants,
+    getUser,
+    //getPlant,
+    //createPlants,
+    //updatePlants,
+    //deletePlants,
   } = require("../controllers/user.controllers");
   const router = Router();
   
   router
-    .get("/", isLoggedIn, getPlants)
-    .get("/:plantsId", isLoggedIn, getPlant)
-    .post("/", createPlants)
-    .patch("/:plantsId", isLoggedIn, updatePlants)
-    .delete("/:plantsId", isLoggedIn, deletePlants);
+    .get("/profile", isLoggedIn, getUser)
+    //.get("/:plantsId", isLoggedIn, getPlant)
+    //.post("/", createPlants)
+    //.patch("/:plantsId", isLoggedIn, updatePlants)
+    //.delete("/:plantsId", isLoggedIn, deletePlants);
   
   module.exports = router;
