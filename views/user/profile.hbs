@@ -1,9 +1,20 @@
 <h1>Private page</h1>
-
 {{#if users}}
   <h2>Welcome, {{ users.username }}!</h2>
   <p>This is your profile page my friend!</p>
+
+{{> newPlant}}
+
+<div>
+{{#each plantProfile}}
+Name: {{name}}
+<img alt="" src="{{image}}">
+Description: {{description}}
+<a href="/plant-detail">Edit</a>
+{{/each}}
+</div>
+
   <button>
-    <a href="/favourites">Reload the page</a>
+    <a href="/favourites">favoritos</a>
   </button>
 {{/if}}
