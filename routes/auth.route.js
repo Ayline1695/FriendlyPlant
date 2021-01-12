@@ -66,26 +66,6 @@ router.post('/login', (req, res, next) => {
       .catch(error => next(error));
   });
 
-  
-// router.get('/profile', (req, res) => {
-//     console.log(req.session.currentUser)
-//   res.render('user/profile', { userInSession: req.session.currentUser });
-// });
-  
-//  const privatePages = (req,res,next) => {
-//    const verifySesion = req.session.currentUser
-//    if(!verifySesion){
-//      res.redirect('/login');
-//    }
-//    else{
-//      next()
-//    }
-//  }
-//  router.get('/list', privatePages, (req,res) =>{
-//    res.render('plants/list', { userInSession: req.session.currentUser})
-//  })
-//   router.get('/private', privatePages, (req,res) =>{
-//     res.render('users/private')
-//   })
+ 
 
 module.exports = router;
