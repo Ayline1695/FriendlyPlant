@@ -21,7 +21,8 @@ const userSchema = new Schema(
     passwordHash: {
       type: String,
       required: [true, 'Password is required.']
-    }
+    },
+    createdPlants: [ { type: Schema.Types.ObjectId, ref: "Plants" } ]
   },
   {
     timestamps: true

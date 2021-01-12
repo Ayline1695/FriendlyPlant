@@ -4,9 +4,11 @@ const plantsSchema = new Schema({
 name: String,
 image: String,
 description: String,
-author: [ { 
+author: { 
     type: Schema.Types.ObjectId, 
-    ref: "Plant" } ]
+    ref: "User" } 
+},{
+    timestamps: true
 })
 
 module.exports = model('Plants', plantsSchema);
