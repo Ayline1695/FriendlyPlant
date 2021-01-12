@@ -1,15 +1,16 @@
 <h1>Private page</h1>
-{{#if users}}
-  <h2>Welcome, {{ users.username }}!</h2>
+{{#if user}}
+  <h2>Welcome, {{ user.username }}!</h2>
   <p>This is your profile page my friend!</p>
 
 {{> newPlant}}
 
 <div>
-{{#each plantProfile}}
+{{#each user.createdPlants}}
 Name: {{name}}
 <img alt="" src="{{image}}">
 Description: {{description}}
+Autor: {{user.username}}
 <a href="/plant-detail">Edit</a>
 {{/each}}
 </div>

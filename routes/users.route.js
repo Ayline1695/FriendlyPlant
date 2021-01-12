@@ -10,7 +10,6 @@ function isLoggedIn(req, res, next) {
   const {
     getUser,
     getPlant,
-    getPlants,
     createPlants,
     updatePlants,
     deletePlants,

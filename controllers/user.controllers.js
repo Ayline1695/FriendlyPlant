@@ -1,11 +1,13 @@
 const Plants = require("../models/Plants.model");
+const User = require("../models/user.model");
 
 const getUser = async (req,res)  => {
   try{
       console.log(req.session.currentUser)
-      const plantsUser = await Plants.find().lean();
-      const plantsWithOptions = plantsUser.map(plantsWithDeleteOptions) 
-      res.render("user/profile", { users: req.session.currentUser, plantProfile: plantsWithOptions  })
+      const user = await User.findById(req.session.currentUser._id).populate("createdPlants").lean();
+      console.log("Usuario check",user)
+      //const plantsWithOptions = plantsUser.map(plantsWithDeleteOptions) 
+      res.render("user/profile", {user})
 
   }catch(err){
       res.send(err)
@@ -62,8 +64,10 @@ const getUser = async (req,res)  => {
    try {
      const { name, description } = req.body;
      const image = req.file.path;
-     console.log(req.file)
-     const plantsUser = await Plants.create({ name, image, description });
+     const author = req.session.currentUser._id
+     const plantsUser = await Plants.create({ name, image, description, author });
+     const updatedUser = await User.findOneAndUpdate({_id:req.session.currentUser._id},{ $push : {"createdPlants" :  plantsUser._id  }})
+     console.log("Update User",updatedUser)
      console.log("plants User", plantsUser);
      res.redirect("/profile");
    } catch (err) {
