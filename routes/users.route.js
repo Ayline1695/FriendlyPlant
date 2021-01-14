@@ -14,7 +14,7 @@ function isLoggedIn(req, res, next) {
     createPlants,
     updatePlants,
     deletePlants,
-    
+    getFavourites
   } = require("../controllers/user.controllers");
   const router = Router();
   router
@@ -22,6 +22,7 @@ function isLoggedIn(req, res, next) {
     .get("/profile/:plantsId", isLoggedIn, getPlant)
     .get("/profile/:plantsId", isLoggedIn, getPlants)
     .get("/plant-detail/:plantsId", isLoggedIn, getPlant)
+    .get("/favourites", isLoggedIn, getFavourites)
     .post("/profile",isLoggedIn, fileUploader.single('image'), createPlants)
     .post("/profile/:plantsId/edit", isLoggedIn, fileUploader.single('image'), updatePlants)
     .post("/profile/:plantsId/delete", isLoggedIn, deletePlants);
