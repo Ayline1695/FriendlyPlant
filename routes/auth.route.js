@@ -43,9 +43,9 @@ router.get('/login', (req, res) => res.render('auth-view/login'));
 
 router.post('/login', (req, res, next) => {
     console.log('SESSION =====> ', req.session);
-    const { email, password } = req.body;
+    const { username, email, password } = req.body;
 
-    if (email === '' || password === '') {
+    if (username === '' || email === '' || password === '') {
         res.render('auth-view/login', {
           errorMessage: 'Please enter both, email and password to login.'
         });
@@ -56,7 +56,7 @@ router.post('/login', (req, res, next) => {
         if (!user) {
           res.render('auth-view/login', { errorMessage: 'Email is not registered. Try with other email.' });
           return;
-        } else if (bcryptjs.compareSync(password, user.passwordHash)) {
+        } else if (bcryptjs.compareSync(username, password, user.passwordHash)) {
           req.session.currentUser = user;
             res.redirect ('/list');
         } else {

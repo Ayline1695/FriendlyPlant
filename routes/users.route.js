@@ -10,16 +10,20 @@ function isLoggedIn(req, res, next) {
   const {
     getUser,
     getPlant,
+    getPlants,
     createPlants,
     updatePlants,
     deletePlants,
+    
   } = require("../controllers/user.controllers");
   const router = Router();
   router
     .get("/profile", isLoggedIn, getUser)
     .get("/profile/:plantsId", isLoggedIn, getPlant)
+    .get("/profile/:plantsId", isLoggedIn, getPlants)
+    .get("/plant-detail/:plantsId", isLoggedIn, getPlant)
     .post("/profile",isLoggedIn, fileUploader.single('image'), createPlants)
-    .patch("/profile/:plantsId", isLoggedIn, fileUploader.single('image'), updatePlants)
-    .delete("/profile/:plantsId", isLoggedIn, deletePlants);
+    .post("/profile/:plantsId/edit", isLoggedIn, fileUploader.single('image'), updatePlants)
+    .post("/profile/:plantsId/delete", isLoggedIn, deletePlants);
   
   module.exports = router;

@@ -11,8 +11,11 @@ Name: {{name}}
 <img alt="" src="{{image}}">
 Description: {{description}}
 Autor: {{user.username}}
-<a href="/plant-detail">Edit</a>
+<a href="/plant-detail/{{_id}}">Edit</a>
+
+{{> deletePlant}}
 {{/each}}
+
 </div>
 
   <button>
