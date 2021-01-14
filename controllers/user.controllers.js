@@ -119,6 +119,9 @@ const getUser = async (req,res)  => {
      console.log(err);
    }
  };
+ const getFavourites = async (req, res) => {
+   res.render("user/favourites");
+ }
 
 
 module.exports = {
@@ -128,4 +131,5 @@ module.exports = {
   createPlants,
   updatePlants,
   deletePlants,
+  getFavourites
 };
