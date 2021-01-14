@@ -1,4 +1,6 @@
-<form action="{{action}}" method="{{method}}">
-    <input type="text" hidden name="_method" value={{restMethod}}>
-    <button type="submit">{{btnText}}</button>
+<p>{{_id}}</p>
+
+<form action="/profile/{{_id}}/delete" method="POST">
+    <input type="text" hidden name="_method" value="Delete">
+    <button type="submit">Delete</button>
 </form>

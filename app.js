@@ -19,6 +19,7 @@ require('./configs/db.config');
 // Middleware Setup
 app.use(logger('dev'));
 
+
 // Access POST params with body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -46,7 +47,14 @@ app.use(
   })
 );
 app.use(cookieParser());
-
+//formulario
+// app.use((req, res, next) => {
+//   const { _method } = req.body;
+//   if (_method) {
+//     req.method = _method;
+//   }
+//   next();
+// });
 // locals
 app.use(function (req, res, next) {
   res.locals.currentUser = req.session.currentUser;

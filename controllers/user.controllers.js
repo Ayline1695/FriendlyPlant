@@ -47,12 +47,23 @@ const getUser = async (req,res)  => {
    restMethod: "PATCH",
  });
  
+//  function plantsWithEditOptions(plantsId) {
+//   const editOptions = editFormOptions(plantsId);
+//   return {
+//     ...plantsUser,
+//     ...editOptions,
+//   };
+// }
+
  const getPlant = async (req, res) => {
+   
    try {
      const { plantsId } = req.params;
      const plantsUser = await Plants.findById(plantsId).lean();
-     res.render("plant-details", {
-       ...editFormOptions(plantsId),
+    //  const editOptions = editFormOptions(plantsId);
+     //const plantWithOptions = plantsUser.map(plantsWithEditOptions) 
+     res.render("user/plant-detail", {
+      //  ...editFormOptions(plantsId),
        ...plantsUser,
      });
    } catch (err) {
@@ -76,6 +87,7 @@ const getUser = async (req,res)  => {
  };
  
  const updatePlants = async (req, res) => {
+  console.log("hello")
    try {
      const { plantsId } = req.params;
      const { name, description } = req.body;
@@ -91,7 +103,7 @@ const getUser = async (req,res)  => {
        description,
      },{new: true});
      console.log(updatedplants);
-     res.redirect(`/profile/${plantsId}`);
+     res.redirect(`/profile`);
    } catch (err) {
      console.log(err);
    }
@@ -107,6 +119,7 @@ const getUser = async (req,res)  => {
      console.log(err);
    }
  };
+
 
 module.exports = {
   getUser,
