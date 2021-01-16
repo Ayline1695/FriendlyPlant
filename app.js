@@ -36,7 +36,7 @@ hbs.registerPartials(`${__dirname}/views/partials/`);
 // Session middleware
 app.use(
   session({
-    secret: "FriendlyPlantSecret",
+    secret: process.env.SESS_SECRET,
     // cookie: { maxAge: 3600000 * 1 },	// 1 hour
     resave: true,
     saveUninitialized: false,
