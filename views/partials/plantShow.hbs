@@ -1,7 +1,16 @@
 <div class="plants">
 {{#each plants}}
 <div id="listplant">
-<h3>Name: {{name}}</h3>
+{{#if isFavorite}}
+<form action="/favourites/{{_id}}" method="POST">
+    <button type="submit">Retirar de favorito</button>
+</form>
+{{else}}
+<form action="/favourites/{{_id}}" method="POST">
+<button type="submit">Agregar a favoritos</button>
+</form>
+{{/if}}
+<h3 id="">Name: {{name}}</h3>
 <img alt="" src="{{image}}">
 <a href="/list/{{_id}}">Details</a>
 </div>

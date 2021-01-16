@@ -56,7 +56,7 @@ router.post('/login', (req, res, next) => {
         if (!user) {
           res.render('auth-view/login', { errorMessage: 'Email is not registered. Try with other email.' });
           return;
-        } else if (bcryptjs.compareSync(username, password, user.passwordHash)) {
+        } else if (bcryptjs.compareSync(password, user.passwordHash)) {
           req.session.currentUser = user;
             res.redirect ('/list');
         } else {

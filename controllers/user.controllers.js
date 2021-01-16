@@ -4,7 +4,7 @@ const User = require("../models/user.model");
 const getUser = async (req,res)  => {
   try{
       console.log(req.session.currentUser)
-      const user = await User.findById(req.session.currentUser._id).populate("createdPlants").lean();
+      const user = await User.findById(req.session.currentUser._id).populate("createdPlants favoritesPlants").lean();
       console.log("Usuario check",user)
       //const plantsWithOptions = plantsUser.map(plantsWithDeleteOptions) 
       res.render("user/profile", {user})
@@ -119,9 +119,20 @@ const getUser = async (req,res)  => {
      console.log(err);
    }
  };
- const getFavourites = async (req, res) => {
-   res.render("user/favourites");
+
+ const getfavPage = async (req, res) => {
+   const userFav = await User.findById(req.session.currentUser._id).populate("favoritesPlants").lean()
+  res.render("user/favourites",{userFav});
  }
+ const updateFavourites = async (req, res) => {
+  const { plantsId } = req.params;
+  const updatedUser = await User.findByIdAndUpdate({_id:req.session.currentUser._id},{ $push : {"favoritesPlants" :  plantsId  }})
+  console.log("Favourites: ",updatedUser);
+  res.redirect("/list")
+ }
+
+ // ruta post /favourites/plantsID, ejecuta updateFav
+ // ruta get a /favourites, ejecuta
 
 
 module.exports = {
@@ -131,5 +142,6 @@ module.exports = {
   createPlants,
   updatePlants,
   deletePlants,
-  getFavourites
+  updateFavourites,
+  getfavPage
 };
