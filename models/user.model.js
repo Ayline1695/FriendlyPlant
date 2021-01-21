@@ -22,6 +22,10 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Password is required.']
     },
+    image: {
+      type: String,
+      default: [true, '/img/user.png'],
+    },
     createdPlants: [ { type: Schema.Types.ObjectId, ref: "Plants" } ],
     favoritesPlants: [ { type: Schema.Types.ObjectId, ref: "Plants" } ]
   },

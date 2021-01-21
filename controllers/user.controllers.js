@@ -8,7 +8,6 @@ const getUser = async (req,res)  => {
       console.log("Usuario check",user)
       //const plantsWithOptions = plantsUser.map(plantsWithDeleteOptions) 
       res.render("user/profile", {user})
-
   }catch(err){
       res.send(err)
   }
