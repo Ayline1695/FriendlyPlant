@@ -129,6 +129,16 @@ a{
     width: 200px;
 }
 
+/*Footer*/
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    opacity: 0.6;
+}
+
 @media only screen and (max-width: 1400px) {
 
 /* Logo pagina principal */
@@ -151,7 +161,14 @@ a{
     background-color: #4e7441;
     border-radius: 50px;
     }
-
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    opacity: 0.6;
+}
 }
 @media only screen and (min-width: 1400px) {
     .logo-principal{
@@ -178,6 +195,14 @@ a{
         background-color: #4e7441;
         border-radius: 50px;
         }
+        #footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    opacity: 0.6;
+}
 }
 div .plants{
     display: flex;

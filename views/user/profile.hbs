@@ -1,19 +1,19 @@
 
 {{#if user}}
 <div class="profile">
-  <h2>Welcome, {{ user.username }}!</h2>
-  <p>This is your profile page my friend!</p>
+  <h2>Bienvenid@, {{ user.username }}!</h2>
+  <p>Este es tu perfil!</p>
   <img alt="" src="/img/user.png">
  </div>
 {{> newPlant}}
 
 <div>
 {{#each user.createdPlants}}
-Name: {{name}}
+Nombre: {{name}}
 <img alt="" src="{{image}}">
-Description: {{description}}
+Descripción: {{description}}
 Autor: {{user.username}}
-<a href="/plant-detail/{{_id}}">Edit</a>
+<a href="/plant-detail/{{_id}}">Editar</a>
 {{> deletePlant}}
 {{/each}}
 
