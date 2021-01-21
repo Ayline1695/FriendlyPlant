@@ -1,8 +1,10 @@
-<h1>Private page</h1>
+
 {{#if user}}
+<div class="profile">
   <h2>Welcome, {{ user.username }}!</h2>
   <p>This is your profile page my friend!</p>
-
+  <img alt="" src="/img/user.png">
+ </div>
 {{> newPlant}}
 
 <div>
