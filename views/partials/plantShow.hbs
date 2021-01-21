@@ -3,14 +3,14 @@
 <div id="listplant">
 {{#if isFavorite}}
 <form action="/favourites/{{_id}}" method="POST">
-    <button type="submit">Retirar de favorito</button>
+    <button type="submit" class="favorite"><img alt="Heart-empty" src="/img/me-gusta.png"></button>
 </form>
 {{else}}
 <form action="/favourites/{{_id}}" method="POST">
-<button type="submit">Agregar a favoritos</button>
+<button type="submit" class="favorite"><img alt="Heart" src="/img/me-gusta.png"></button>
 </form>
 {{/if}}
-<h3 id="">Name: {{name}}</h3>
+<h3 id="">{{name}}</h3>
 <img alt="" src="{{image}}">
 <a href="/list/{{_id}}">Details</a>
 </div>

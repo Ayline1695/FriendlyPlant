@@ -128,7 +128,25 @@ a{
 .profile img{
     width: 200px;
 }
-
+/*navbar*/
+.logo{
+    max-width: 100px;
+}
+.navbar-nav{
+    width: 100%;
+    justify-content: flex-end!important;
+}
+.nav-item{
+    
+    text-align: center!important;
+}
+button{
+    border: none;
+    background-color: #fff;
+}
+.favorite img{
+    width: 20px;
+}
 @media only screen and (max-width: 1400px) {
 
 /* Logo pagina principal */
@@ -183,10 +201,13 @@ div .plants{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+    text-align: center;
 }
 div .plants img{
-    max-width: 200px;
+    max-width: 250px;
     max-height: 200px;
+    padding: 5%;
+    margin: 10%;
 }
 #listplant{
     width: 200px;
