@@ -3,19 +3,23 @@
 <div class="profile">
   <h2>Bienvenid@, {{ user.username }}!</h2>
   <p>Este es tu perfil!</p>
-  <img alt="" src="/img/user.png">
+  <img alt="" src="{image}">
  </div>
 {{> newPlant}}
 
-<div>
+<div class="plants">
+
 {{#each user.createdPlants}}
+<div id="listplant">
 Nombre: {{name}}
 <img alt="" src="{{image}}">
 Descripción: {{description}}
 Autor: {{user.username}}
 <a href="/plant-detail/{{_id}}">Editar</a>
 {{> deletePlant}}
+</div>
 {{/each}}
+
 
 </div>
 

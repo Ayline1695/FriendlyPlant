@@ -5,10 +5,7 @@
 a{
     text-decoration: none!important;
 }
-p{ margin-top: 0;
-    margin-bottom: 1rem;
-    text-align: center;
-    }
+
 .paginaprincipal{
     width: 100%;
     height: auto;
@@ -26,6 +23,7 @@ p{ margin-top: 0;
 /* Video fondo */
 #video_background {
     position: absolute;
+    top: 0px;
     bottom: 0px;
     right: 0px;
     min-width: 100%;
@@ -34,6 +32,7 @@ p{ margin-top: 0;
     height: auto;
     z-index: -1000;
     overflow: hidden;
+    padding-bottom: 120px;
     }
 #video_pattern {
     background:#fff;
@@ -132,22 +131,42 @@ p{ margin-top: 0;
 .profile img{
     width: 200px;
 }
+/*navbar*/
+.logo{
+    max-width: 100px;
+}
+.navbar{
+    position: -webkit-sticky!important;
+position: sticky!important;
+top: 0;
+}
+.navbar-nav{
+    width: 100%;
+    justify-content: flex-end!important;
+}
+.nav-item{
+    
+    text-align: center!important;
+}
+button{
+    border: none;
+    background-color: #fff;
+}
+.favorite img{
+    width: 20px;
+}
 
 /*Footer*/
 #footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
+    height: 120px;
     background: #000;
-    opacity: 0.6;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
-.logo-footer {
-    font-size: 38px;
-    float: right;
-    margin-right: 30px;
-    padding: 10px 10px;
-}
+
 
 @media only screen and (max-width: 1400px) {
 
@@ -171,14 +190,23 @@ p{ margin-top: 0;
     background-color: #4e7441;
     border-radius: 50px;
     }
-#footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: #000;
-    opacity: 0.6;
-}
+    #listplant{
+        width: 400px;
+        margin: 15px 0;
+    }
+#footer p{ 
+        text-align: center;
+        padding:5% 10%;
+        color: #ffffff;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    #footer img{
+        width: 100px;
+        height: auto;
+        display: inline-block;
+        margin: 0% 5%;
+    }
 
 }
 @media only screen and (min-width: 1400px) {
@@ -188,10 +216,8 @@ p{ margin-top: 0;
         height: auto;
         margin: 5%;
         background-color: rgba(255, 255, 255, 0.26);
-        border-radius: 100%;
     }
     .sign,.login{
-        display: inline;
         margin: 20px;
     }
     .sign a,.login a{
@@ -206,25 +232,83 @@ p{ margin-top: 0;
         background-color: #4e7441;
         border-radius: 50px;
         }
-        #footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: #000;
-    opacity: 0.6;
-}
+    #footer p{ 
+            text-align: center;
+            color: #ffffff;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    #footer img{
+            width: 100px;
+            height: auto;
+            display: inline-block;
+            margin: 0% 5%;
+        }
+    #listplant{
+            margin-bottom: 8%;
+        }
+    .marco{
+        padding-top: 1%;
+    }
 
 }
-div .plants{
+
+/* List Plants */
+.plants{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+    justify-content: space-around;
+    text-align: center;
+    margin: 5% 10%;
+
 }
-div .plants img{
-    max-width: 200px;
-    max-height: 200px;
+.plants img{
+    width: 400px;
+    height: 400px;
+    padding: 15px;
 }
 #listplant{
-    width: 200px;
+    width: 400px;
+    background-color: rgba(228, 226, 226, 0.294);
+    box-shadow: 0px 0px 5px 5px rgba(134, 134, 134, 0.5);
+    padding:20px 0;
+}
+#listplant a{
+    display: block;
+    text-align: right;
+    padding-right: 20px;
+}
+#listplant h3 {
+    display: inline-block;
+    padding-right: 200px;
+}
+#listplant h3,.container_favorite{
+    display: inline-block;
+}
+.details{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.marco {
+    width: 600px;
+}
+.detailstitle{
+    font-size: 23pt;
+    margin-top: 20px;
+    text-align: center;
+}
+.details img {
+    width: 400px;
+    height: auto;
+    padding-bottom: 20px;
+}
+.details p,h5{
+    margin: 0 20px;
+    text-align: justify;
 }
