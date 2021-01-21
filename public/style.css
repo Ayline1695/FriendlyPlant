@@ -95,6 +95,39 @@ a{
 .registro a{
     color:#fff;
 }
+/* Profile */
+.addplant{
+    padding: 8%;
+}
+.addplant .seccion{
+    position: relative;
+}
+.addplant .seccion input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+.addplant button {
+    border: none;
+    outline: none;
+    color: #fff;
+    background:#4e7441ec;
+    margin-bottom: 5%;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.profile{
+    width:50%;
+    padding:8px;
+    margin:auto;
+    text-align: center;
+}
+.profile img{
+    width: 200px;
+}
 
 @media only screen and (max-width: 1400px) {
 
@@ -146,11 +179,15 @@ a{
         border-radius: 50px;
         }
 }
-/*div .plants{
+div .plants{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
 }
+div .plants img{
+    max-width: 200px;
+    max-height: 200px;
+}
 #listplant{
     width: 200px;
-}/*
+}
