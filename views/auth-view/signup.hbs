@@ -1,25 +1,36 @@
-<h1>Signup</h1>
 
-<form action="/signup" method="POST">
 
-  <label for="username">Username*:
+<form action="/signup" method="POST" class="registro">
+<h2>Registrarse</h2>
+<div class="seccion">
+    <label for="image">Imagen de perfil</label>
+    <input type="file" name="image" id="image">
+  </div>
+  <div class="seccion">
+  <label for="username">Nombre de usuario*:
     <input type="text" name="username" id="username" required>
   </label>
-  
-      <label for="email">e-mail*:
+  </div>
+  <div class="seccion">
+      <label for="email">E-mail*:
     <input type="text" name="email" id="email" required>
   </label>
-  
-  <label for="password">Password*:
+  </div>
+  <div class="seccion">
+  <label for="password">Contraseña*:
     <input type="password" name="password" id="password" required>
   </label>
-  
+  </div>
   {{#if errorMessage}}
     <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
   
-  <button type="submit">Create account</button>
+  <button type="submit">Crear una cuenta</button>
   
-  <p>Already have an account? <a href="/login">Login</a></p>
+  <p>¿Ya tienes una cuenta? <a href="/login">Logueate</a></p>
   
 </form>
+
+    <video autoplay loop id="video_background" preload="auto" muted >
+   <source src="../img/Nature.mp4" type="video/mp4" />
+ </video>
