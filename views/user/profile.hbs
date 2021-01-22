@@ -1,20 +1,25 @@
-<h1>Private page</h1>
-{{#if user}}
-  <h2>Welcome, {{ user.username }}!</h2>
-  <p>This is your profile page my friend!</p>
 
+{{#if user}}
+<div class="profile">
+  <h2>Bienvenid@, {{ user.username }}!</h2>
+  <p>Este es tu perfil!</p>
+  <img alt="" src="{image}">
+ </div>
 {{> newPlant}}
 
-<div>
-{{#each user.createdPlants}}
-Name: {{name}}
-<img alt="" src="{{image}}">
-Description: {{description}}
-Autor: {{user.username}}
-<a href="/plant-detail/{{_id}}">Edit</a>
+<div class="plants">
 
+{{#each user.createdPlants}}
+<div id="listplant">
+Nombre: {{name}}
+<img alt="" src="{{image}}">
+Descripción: {{description}}
+Autor: {{user.username}}
+<a href="/plant-detail/{{_id}}">Editar</a>
 {{> deletePlant}}
+</div>
 {{/each}}
+
 
 </div>
 
