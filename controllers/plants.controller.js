@@ -34,6 +34,12 @@ const getPlants = async (req,res)  => {
       console.log(err);
     }
   };
+  const esquejes = async (req,res) => {
+    res.render("plants/esquejes.hbs")
+  }
+  const tips = async (req,res) => {
+    res.render("plants/tips.hbs")
+  }
 
   module.exports = {
-    getPlants,getPlant}
+    getPlants,getPlant, esquejes, tips}

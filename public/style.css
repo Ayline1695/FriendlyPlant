@@ -1,9 +1,58 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 a{
     text-decoration: none!important;
+}
+/*home*/
+
+.home {height: 900px;}
+.home {
+	background: linear-gradient(to bottom, #339b52,#eeeeee);
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+.home .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+
+	
+}
+
+.home h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+}
+
+.home h3, p {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+}
+
+.home button {
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+	margin-bottom: 50px;
+	box-shadow: 0 3px 20px 0 #0000003b;
+}
+.home button:hover{
+	cursor: pointer;
 }
 
 .paginaprincipal{
@@ -99,20 +148,20 @@ a{
     color:#fff;
 }
 /* Profile */
-.addplant{
+.formplant{
     padding: 8%;
 }
-.addplant .seccion{
+.formplant .seccion{
     position: relative;
 }
-.addplant .seccion input{
+
+.formplant .seccion input{
     width: 100%;
-    padding: 10px 0;
     font-size: 16px;
     color: #000000;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
-.addplant button {
+.formplant button {
     border: none;
     outline: none;
     color: #fff;
@@ -122,6 +171,34 @@ a{
     cursor: pointer;
     border-radius: 5px;
 }
+/* newplant */
+.newplant .seccion{
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+/*.formimg {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.formimg + label {
+    font-size: 1em;
+    color: white;
+    padding: 2px 4px;
+    background-color: #4e7441;
+    display: inline-block;
+}
+
+.formimg:focus + label,
+.formimg + label:hover {
+    background-color: #4e7441ec;
+}*/
+
 .profile{
     width:50%;
     padding:8px;
@@ -134,6 +211,8 @@ a{
 /*navbar*/
 .logo{
     max-width: 100px;
+    background-color: rgba(255, 255, 255, 0.322);
+    border-radius: 100%;
 }
 .navbar{
     position: -webkit-sticky!important;
@@ -155,8 +234,38 @@ button{
 .favorite img{
     width: 20px;
 }
+/* plant detail */
+.plantdetail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+}
 
-
+.plantdetail .boxplant{
+    max-width: 600px;
+    padding: 2%;
+}
+.plantdetail .form{
+    padding: 10%;
+}
+#description{
+    padding: 5%;
+    text-align: justify;
+}
+/* fav link*/
+.fav{
+    color: rgb(211, 43, 85);
+    font-weight: bold;
+}
+/* delete button */
+.deletebutton{
+    border:2px solid #4e7441 ;
+    background-color: #4e744173;
+    color: #fff;
+    padding: 10px 20px;
+}
 /*Footer*/
 #footer {
     width: 100%;
@@ -268,11 +377,13 @@ button{
     width: 400px;
     height: 400px;
     padding: 15px;
+    border-radius: 20%;
 }
 #listplant{
     width: 400px;
-    background-color: rgba(228, 226, 226, 0.294);
-    box-shadow: 0px 0px 5px 5px rgba(134, 134, 134, 0.5);
+    background-color: rgba(228, 226, 226, 0.048);
+    box-shadow: 0px 0px 5px 5px rgba(165, 164, 164, 0.322);
+    border-radius: 2%;
     padding:20px 0;
 }
 #listplant a{
@@ -308,9 +419,32 @@ button{
     width: 400px;
     height: auto;
     padding-bottom: 20px;
+    border-radius:2%;
 }
 .details p,h5{
     margin: 0 20px;
     text-align: justify;
 }
 
+/*esquejes y tips*/
+.esquejes h1,.tips h1{
+    text-align: center;
+    padding: 2% 0;
+}
+.esquejes img{
+    max-width: 600px;
+    height: auto;
+    width: 100%;
+    padding: 0 4%;
+    display: block;
+    margin: auto;
+}
+.esquejes section, .tips section{
+    padding: 5% 20%;
+}
+.esquejes section p{
+    padding: 10px 0;
+}
+.tips section{
+    padding: 1% 20%;
+}
