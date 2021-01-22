@@ -1,15 +1,15 @@
-<form action="/profile" method="POST" enctype="multipart/form-data" class="addplant">
-<div class="seccion">
+<form action="/profile" method="POST" enctype="multipart/form-data" class="formplant newplant">
+    <div class="seccion">
     <label for="name">Nombre</label>
     <input type="text" name="name" id="name">
     </div>
     <div class="seccion">
     <label for="name">Imagen</label>
-    <input type="file" name="image" id="image">
+    <input type="file" name="image" id="image"  multiple>
     </div>
     <div class="seccion">
     <label for="description">Descripción</label>
     <input type="text" name="description" id="description">
-</div>
+    </div>
     <button type="submit">Agregar</button>
 </form>

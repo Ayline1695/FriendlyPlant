@@ -1,10 +1,16 @@
-<p></p>
-<form action="/profile/{{_id}}/edit" method="POST">
+
+<form action="/profile/{{_id}}/edit" method="POST" class="formplant">
+<div class="seccion">
     <label for="name">Nombre</label>
     <input type="text" name="name" id="name">
-    <label for="image">Imagen</label>
-    <input type="file" name="image" id="image">
+</div>
+<div class="seccion">
+    <label for="image">Edit image</label>
+    <input type="file" name="image" id="image" class="formimg">
+</div>
+<div class="seccion">
     <label for="description">Descripción</label>
     <input type="text" name="description" id="description">
+</div>
     <button type="submit">Editar</button>
 </form>
