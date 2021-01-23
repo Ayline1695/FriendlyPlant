@@ -12,12 +12,12 @@ router.get('/signup', (req, res) => res.render('auth-view/signup'));
 
 router.post('/signup', (req, res, next) => {
     const { username, email, password } = req.body;
-    let imageUrl;const image = req.file.path;
-   if (req.file) {
-     imageUrl = req.file.path;
-   } else {
-     imageUrl = req.body.existingImage;
-   }
+  //  let imageUrl;const image = req.file.path;
+  // if (req.file) {
+  //   imageUrl = req.file.path;
+  // } else {
+  //   imageUrl = req.body.existingImage;
+  // }
     if (!username || !email || !password) {
         res.render('/signup', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
         return;
@@ -31,7 +31,6 @@ router.post('/signup', (req, res, next) => {
         return User.create({
         username,
         email,
-        imageUrl,
         passwordHash: hashedPassword
         });
     })
