@@ -1,22 +1,5 @@
-<div class="plants">
-{{#each plants}}
-<div id="listplant">
-<h3 id="">{{name}}</h3>
-<div class="container_favorite">
-<!--Valor favorite: {{isFavorite}}
-id: {{_id}}-->
-{{#if isFavorite}}
-<form action="/favourites/{{_id}}" method="POST">
-    <button type="submit" class="favorite"><img id="like" alt="" src="/img/me-gusta-border.png" /></button>
-</form>
-{{else}}
-<form action="/favourites/{{_id}}" method="POST">
-<button type="submit" class="favorite"><img id="like" alt="" src="/img/me-gusta.png" /></button>
-</form>
-{{/if}}
-</div>
-<img alt="" src="{{image}}">
-<a href="/list/{{_id}}">ver mas</a>
-</div>
-{{/each}}
+<h1>Listado Plantas</h1>
+<!-- Partial dentro del un Div -->
+<div>
+{{> plantShow}}
 </div>
