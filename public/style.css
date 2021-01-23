@@ -231,8 +231,9 @@ button{
     border: none;
     background-color: #fff;
 }
-.favorite img{
-    width: 20px;
+button #like{
+    width: 50px;
+    height: 50px;
 }
 /* plant detail */
 .plantdetail{
@@ -393,7 +394,7 @@ button{
 }
 #listplant h3 {
     display: inline-block;
-    padding-right: 200px;
+    padding-right: 100px;
 }
 #listplant h3,.container_favorite{
     display: inline-block;

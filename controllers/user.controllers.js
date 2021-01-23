@@ -4,8 +4,17 @@ const User = require("../models/user.model");
 const getUser = async (req,res)  => {
   try{
       console.log(req.session.currentUser)
-      const user = await User.findById(req.session.currentUser._id).populate("createdPlants favoritesPlants").lean();
-      console.log("Usuario check",user)
+      const user = await User.findById(req.session.currentUser._id).populate([
+        {
+          path: 'createdPlants',
+          populate: { path: 'author', model: 'User' }
+        },
+        {
+          path: 'favoritePlants',
+          populate: { path: 'author', model: 'User' }
+        }
+      ]);
+      console.log("Usuario check", user)
       //const plantsWithOptions = plantsUser.map(plantsWithDeleteOptions) 
       res.render("user/profile", {user})
   }catch(err){
@@ -31,7 +40,7 @@ const getUser = async (req,res)  => {
  
  const getPlants = async (req, res) => {
    try {
-     const plantsUser = await Plants.find().lean();
+     const plantsUser = await Plants.find().populate("author");
      const plantsWithOptions = plantsUser.map(plantsWithDeleteOptions) 
      res.render("user/profile.hbs", { plantProfile: plantsWithOptions });
    } catch (err) {
@@ -58,7 +67,7 @@ const getUser = async (req,res)  => {
    
    try {
      const { plantsId } = req.params;
-     const plantsUser = await Plants.findById(plantsId).lean();
+     const plantsUser = await Plants.findById(plantsId).populate("author").lean();
     //  const editOptions = editFormOptions(plantsId);
      //const plantWithOptions = plantsUser.map(plantsWithEditOptions) 
      res.render("user/plant-detail", {
@@ -125,8 +134,13 @@ const getUser = async (req,res)  => {
  }
  const updateFavourites = async (req, res) => {
   const { plantsId } = req.params;
-  const updatedUser = await User.findByIdAndUpdate({_id:req.session.currentUser._id},{ $push : {"favoritesPlants" :  plantsId  }})
-  console.log("Favourites: ",updatedUser);
+  const user = await User.findById({_id:req.session.currentUser._id})
+  if (user.favoritesPlants.includes(plantsId)){
+    await User.findByIdAndUpdate({_id:req.session.currentUser._id},{ $pull : {"favoritesPlants" :  plantsId  }})
+  }
+  else{
+    await User.findByIdAndUpdate({_id:req.session.currentUser._id},{ $push : {"favoritesPlants" :  plantsId  }})
+  }
   res.redirect("/list")
  }
 

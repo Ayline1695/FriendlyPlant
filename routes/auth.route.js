@@ -36,7 +36,7 @@ router.post('/signup', (req, res, next) => {
     })
     .then(userFromDB => {
         console.log('New user is: ', userFromDB);
-        res.redirect('../list');
+        res.redirect('../home');
     })
     .catch(error => next(error));
 });
@@ -63,7 +63,7 @@ router.post('/login', (req, res, next) => {
           return;
         } else if (bcryptjs.compareSync(password, user.passwordHash)) {
           req.session.currentUser = user;
-            res.redirect ('/list');
+            res.redirect ('/home');
         } else {
           res.render('auth-view/login', { errorMessage: 'Incorrect password.' });
         }
