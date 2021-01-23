@@ -14,7 +14,7 @@ const getPlants = async (req,res)  => {
         //  favoritesPlants = favoritesPlants.map(favplant => {
         //    return ObjectID(favplant._id)
         //  })
-        // let isFavorite = favoritesPlants.includes(plant._id)
+        let isFavorite = favoritesPlants.includes(plant._id)
 
           favoritesPlants.forEach(favplant => {
               if (favplant._id.equals(plant._id)){
@@ -33,6 +33,7 @@ const getPlants = async (req,res)  => {
        console.log("PLANTS MAP:", plants)
           res.render("plants/list.hbs",{plants})
       }catch(err){
+        console.log("ERROR: ",err)
           res.send(err)
       }
   };
