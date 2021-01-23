@@ -1,7 +1,11 @@
 <div>
 <h1>Favoritos</h1>
 </div>
+<div class="plants">
 {{#each userFav.favoritesPlants}}
-<h3>Nombre: {{name}}</h3>
+<div id="listplant">
+<h3>{{name}}</h3>
 <img alt="" src="{{image}}">
+</div>
 {{/each}}
+</div>
