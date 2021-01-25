@@ -9,18 +9,18 @@ const getPlants = async (req,res)  => {
         //console.log("FAVORITESPLANTS: ",favoritesPlants)
           const plantsList = await Plants.find({}).lean();
           //console.log(plantsList);
+        let isFavorite = false;
         const plants = plantsList.map(plant => {
         //  console.log("IS FAVORITES PLANTS",favoritesPlants)
         //  favoritesPlants = favoritesPlants.map(favplant => {
         //    return ObjectID(favplant._id)
         //  })
-        let isFavorite = favoritesPlants.includes(plant._id)
+       // isFavorite = favoritesPlants.includes(plant._id)
 
           favoritesPlants.forEach(favplant => {
               if (favplant._id.equals(plant._id)){
                 isFavorite = true
               }
-              else{isFavorite =  false}
               
             });
             //console.log("IS FAV",isFavorite)

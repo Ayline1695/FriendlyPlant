@@ -6,15 +6,39 @@
 a{
     text-decoration: none!important;
 }
+/* contenido */
+.content{
+    margin-bottom: 350px; /* Same height as footer */
+  }
+  /*navbar*/
+.logo{
+    max-width: 100px;
+    background-color: rgba(255, 255, 255, 0.322);
+    border-radius: 100%;
+}
+.navbar{
+    position: -webkit-sticky!important;
+position: sticky!important;
+top: 0;
+}
+.navbar-nav{
+    width: 100%;
+    justify-content: flex-end!important;
+}
+.nav-item{
+    
+    text-align: center!important;
+}
 /*home*/
-
 .home {height: 900px;}
 .home {
-    background: url('/img/jardines.jpg');
+    background: url('/img/prueba3bck.jpg');
 	text-align: center;
 	width: 100%;
 	height: auto;
-	background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
 	background-attachment: fixed;
     /*position: relative;*/
 	overflow: hidden;
@@ -26,12 +50,12 @@ a{
 	padding: 50px;
 	color: #FFF;
 	text-shadow: 1px 1px 1px #333;
-    background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+    background-image: linear-gradient( 135deg, #b3cc9b9f 10%, #d197766b 100%);
 	
 }
 
 .home h1 {
-	font-family: 'Dancing Script', cursive;
+    font-family: 'Nunito', sans-serif;
 	font-size: 80px;
 	margin-bottom: 30px;
 }
@@ -41,20 +65,7 @@ a{
 	margin-bottom: 30px;
 }
 
-.home button {
-	border: none;
-	outline: none;
-	padding: 10px 20px;
-	border-radius: 50px;
-	color: #333;
-	background: #fff;
-	margin-bottom: 50px;
-	box-shadow: 0 3px 20px 0 #0000003b;
-}
-.home button:hover{
-	cursor: pointer;
-}
-
+/* list */
 .paginaprincipal{
     width: 100%;
     height: auto;
@@ -81,7 +92,6 @@ a{
     height: auto;
     z-index: -1000;
     overflow: hidden;
-    padding-bottom: 120px;
     }
 #video_pattern {
     background:#fff;
@@ -208,25 +218,7 @@ a{
 .profile img{
     width: 200px;
 }
-/*navbar*/
-.logo{
-    max-width: 100px;
-    background-color: rgba(255, 255, 255, 0.322);
-    border-radius: 100%;
-}
-.navbar{
-    position: -webkit-sticky!important;
-position: sticky!important;
-top: 0;
-}
-.navbar-nav{
-    width: 100%;
-    justify-content: flex-end!important;
-}
-.nav-item{
-    
-    text-align: center!important;
-}
+
 button{
     border: none;
     background-color: #fff;
@@ -270,102 +262,19 @@ button #like{
 /*Footer*/
 #footer {
     width: 100%;
-    height: 120px;
-    background: #000;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-
-@media only screen and (max-width: 1400px) {
-
-/* Logo pagina principal */
-.logo-principal{
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    margin: 10% 10% 5% 10%;
-}
-.sign a,.login a{
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    color: #ffffff!important;
-    max-width:200px;
-    padding:8px;
-    margin:auto;
-    padding: 15px;
-    font-size: 16pt;
-    background-color: #4e7441;
-    border-radius: 50px;
+    background: #111;
+    position: fixed; left: 0; bottom: 0;
+  }
+#footer p{
+      color: #696969;
+      column-count: 2;
+      column-gap: 50px;
+      font-size: 1em;
+      font-weight: 300;
     }
-    #listplant{
-        width: 400px;
-        margin: 15px 0;
-    }
-#footer p{ 
-        text-align: center;
-        padding:5% 10%;
-        color: #ffffff;
-        vertical-align: middle;
-        display: inline-block;
-    }
-    #footer img{
-        width: 100px;
-        height: auto;
-        display: inline-block;
-        margin: 0% 5%;
-    }
-
-}
-@media only screen and (min-width: 1400px) {
-    .logo-principal{
-        max-width: 400px;
-        width: 50%;
-        height: auto;
-        margin: 5%;
-        background-color: rgba(255, 255, 255, 0.26);
-    }
-    .sign,.login{
-        margin: 20px;
-    }
-    .sign a,.login a{
-        display: block;
-        text-decoration: none;
-        text-align: center;
-        color: #ffffff!important;
-        max-width:200px;
-        padding:8px;
-        margin:auto;
-        font-size: 16pt;
-        background-color: #4e7441;
-        border-radius: 50px;
-        }
-    #footer p{ 
-            text-align: center;
-            color: #ffffff;
-            vertical-align: middle;
-            display: inline-block;
-        }
-    #footer img{
-            width: 100px;
-            height: auto;
-            display: inline-block;
-            margin: 0% 5%;
-        }
-    #listplant{
-            margin-bottom: 8%;
-        }
-    .marco{
-        padding-top: 1%;
-    }
-
-}
 
 /* List Plants */
-.plants{
+.plants, .homemain{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -451,4 +360,130 @@ button #like{
 }
 .comentario{
     padding: 0 2%;
+}
+@media only screen and (max-width: 1400px) {
+
+    /* Logo pagina principal */
+    .logo-principal{
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        margin: 10% 10% 5% 10%;
+    }
+    .sign a,.login a{
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: #ffffff!important;
+        max-width:200px;
+        padding:8px;
+        margin:auto;
+        padding: 15px;
+        font-size: 16pt;
+        background-color: #4e7441;
+        border-radius: 50px;
+        }
+        #listplant{
+            width: 400px;
+            margin: 15px 0;
+        }
+    #footer p{ 
+            text-align: center;
+            padding:5% 10%;
+            color: #ffffff;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        #footer img{
+            width: 100px;
+            height: auto;
+            display: inline-block;
+            margin: 0% 5%;
+        }
+    
+    }
+    @media only screen and (min-width: 1400px) {
+        .logo-principal{
+            max-width: 400px;
+            width: 50%;
+            height: auto;
+            margin: 5%;
+            background-color: rgba(255, 255, 255, 0.26);
+        }
+        .sign,.login{
+            margin: 20px;
+        }
+        .sign a,.login a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: #ffffff!important;
+            max-width:200px;
+            padding:8px;
+            margin:auto;
+            font-size: 16pt;
+            background-color: #4e7441;
+            border-radius: 50px;
+            }
+        #footer p{ 
+                text-align: center;
+                color: #ffffff;
+                vertical-align: middle;
+                display: inline-block;
+            }
+        #footer img{
+                width: 100px;
+                height: auto;
+                display: inline-block;
+                margin: 0% 5%;
+            }
+        #listplant{
+                margin-bottom: 8%;
+            }
+        .marco{
+            padding-top: 1%;
+        }
+    
+    }
+    /*home sections*/
+
+ 
+.homemain section{
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    margin: 5%;
+}
+/*.homemain .esquejes-home {    
+    background-image: url('/img/logo-esqueje.png');
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+.homemain .tips-home {    
+    background-image: url('/img/tipsg.png');
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+.homemain .list-home {    
+    background-image: url('/img/list.png');
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}*/
+.homemain section h2{
+    color: #000;  
+    font-size: 3rem;
+    line-height: 0.9;
+    text-align: center;
 }

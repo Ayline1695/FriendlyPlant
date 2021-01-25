@@ -36,7 +36,7 @@ router.post('/signup', (req, res, next) => {
     })
     .then(userFromDB => {
         console.log('New user is: ', userFromDB);
-        res.redirect('../home');
+        res.redirect('../login');
     })
     .catch(error => next(error));
 });
