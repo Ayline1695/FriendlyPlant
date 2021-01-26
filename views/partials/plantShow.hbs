@@ -1,6 +1,6 @@
 <header class="home">
 	<div class="overlay">
-<h1 class="title">PLANTAS</h1>
+<h2 class="title">PLANTAS</h2>
 <p>En esta sección encontrarás el contenido subido por tod@s los usuari@s, puedes añadir tus favoritos y ver más información.</p>
 		</div>
 </header>
@@ -14,16 +14,16 @@
 id: {{_id}}-->
 {{#if isFavorite}}
 <form action="/favourites/{{_id}}" method="POST">
-    <button type="submit" class="favorite"><img id="like" alt="" src="/img/me-gusta-border.png" /></button>
+    <button type="submit" class="favorite"><img id="like" alt="" src="/img/me-gusta.png" /></button>
 </form>
 {{else}}
 <form action="/favourites/{{_id}}" method="POST">
-<button type="submit" class="favorite"><img id="like" alt="" src="/img/me-gusta.png" /></button>
+<button type="submit" class="favorite"><img id="like" alt="" src="/img/me-gusta-border.png" /></button>
 </form>
 {{/if}}
 </div>
 <img alt="" src="{{image}}">
-<a href="/list/{{_id}}">ver mas</a>
+<a href="/list/{{_id}}">Ver más</a>
 </div>
 {{/each}}
 </div>

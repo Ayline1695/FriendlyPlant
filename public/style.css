@@ -29,6 +29,11 @@ top: 0;
     
     text-align: center!important;
 }
+/* Titulo */
+.title {
+    font-size: 25pt;
+}
+
 /*home*/
 .home {height: 900px;}
 .home {
