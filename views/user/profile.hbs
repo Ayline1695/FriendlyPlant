@@ -1,11 +1,19 @@
 
+
+
 {{#if user}}
+<header class="home">
+	<div class="overlay">
+
 <div class="profile">
-  <h2>Bienvenid@, {{ user.username }}!</h2>
-  <p>Este es tu perfil!</p>
+  <h2>Bienvenid@ a tu perfil</h2>
+  <h3>{{ user.username }}</h3>
   <img alt="" src="{image}">
   <a href="/favourites" class="fav">Favoritos</a>
  </div>
+ </div>
+</header>
+
 {{> newPlant}}
 
 <div class="plants">

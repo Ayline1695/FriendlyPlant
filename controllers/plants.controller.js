@@ -1,22 +1,18 @@
 const Plants = require("../models/Plants.model");
 const User = require("../models/user.model");
-ObjectId = require('mongodb').ObjectID;// para transformar un id en objectID
+
 
 const getPlants = async (req,res)  => {
       try{
         const { _id: userId } = req.session.currentUser;
         const { favoritesPlants } = await User.findById(userId).lean()
-        //console.log("FAVORITESPLANTS: ",favoritesPlants)
+        
           const plantsList = await Plants.find({}).lean();
           //console.log(plantsList);
-        let isFavorite = false;
+        
         const plants = plantsList.map(plant => {
-        //  console.log("IS FAVORITES PLANTS",favoritesPlants)
-        //  favoritesPlants = favoritesPlants.map(favplant => {
-        //    return ObjectID(favplant._id)
-        //  })
-       // isFavorite = favoritesPlants.includes(plant._id)
-
+        
+       let isFavorite = false;
           favoritesPlants.forEach(favplant => {
               if (favplant._id.equals(plant._id)){
                 isFavorite = true
