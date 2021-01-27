@@ -26,9 +26,13 @@ top: 0;
     justify-content: flex-end!important;
 }
 .nav-item{
-    
+    font-weight: 700;
     text-align: center!important;
 }
+.dropdown-menu {
+    text-align: center!important;
+}
+
 /* Titulo */
 .title {
     font-size: 25pt;
@@ -166,9 +170,7 @@ top: 0;
 .formplant{
     padding: 8%;
 }
-.formplant .seccion{
-    position: relative;
-}
+
 
 .formplant .seccion input{
     width: 100%;
@@ -188,7 +190,6 @@ top: 0;
 }
 /* newplant */
 .newplant .seccion{
-    position: relative;
     display: inline-block;
     padding: 0 10px;
 }
@@ -264,12 +265,30 @@ border: 0.5px solid rgba(94, 93, 93, 0.24);
 background-color: #4e7441;
 
 }
+/*edit button profile*/
+.editar a{
+    background-color: #4e7441;
+    display: inline-block;
+    border:2px solid #4e7441 ;
+    color: #fff!important;
+    padding: 10px 20px;
+    margin: 20px 0;
+}
 /* delete button */
 .deletebutton{
-    border:2px solid #4e7441 ;
-    background-color: #4e744173;
+    display: inline-block;
+    /*border:2px outset #4e7441 ;*/
+    border-style: outset;
+    background-color: #fff;
     color: #fff;
-    padding: 10px 20px;
+}
+.deletebutton:hover{
+    border-style: inset ;
+}
+.deletebutton img {
+    max-width: 50px;
+    max-height: 50px;
+ 
 }
 /*Footer*/
 #footer {
@@ -278,14 +297,7 @@ background-color: #4e7441;
     background: #111;
     position: absolute; 
   }
-  
-#footer p{
-      color: #696969;
-      column-count: 2;
-      column-gap: 50px;
-      font-size: 1em;
-      font-weight: 300;
-    }
+
 
 /* List Plants */
 .plants, .homemain{
@@ -308,19 +320,35 @@ background-color: #4e7441;
     background-color: rgba(228, 226, 226, 0.048);
     box-shadow: 0px 0px 5px 5px rgba(165, 164, 164, 0.322);
     border-radius: 2%;
-    padding:20px 0;
+    padding-top:20px;
 }
-#listplant a{
+.listprofile{
+    padding-bottom: 20px;
+}
+/*edit button*/
+
+.editbutton {
+    background-color: #4e7441;
+    text-align: center;
+}
+.editbutton a{
+    color: #ffffff!important;
+    font-size: 15pt;
+    font-weight: bolder;
+    padding: 15px 0px;
     display: block;
-    text-align: right;
-    padding-right: 20px;
 }
-#listplant h3 {
-    display: inline-block;
-    padding-right: 100px;
+.listprofile h3 {
+    display: block;
+    text-align: center;
+    color:#4e7441;
+    
 }
 #listplant h3,.container_favorite{
     display: inline-block;
+}
+#listplant p{
+    padding: 0 10px;
 }
 .details{
     width: 100%;
@@ -331,6 +359,7 @@ background-color: #4e7441;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .marco {
     width: 600px;
 }

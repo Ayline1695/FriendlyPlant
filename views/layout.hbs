@@ -27,7 +27,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <img alt="logo" class="logo" src="/img/logo.png"/>
+    <a class="nav-link" href="/home"><img alt="logo" class="logo" src="/img/logo.png"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,17 +36,22 @@
         <li class="nav-item">
           <a class="nav-link" href="/home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile">Perfil</a>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Perfil</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/profile">Perfil</a></li>
+            <li><a class="dropdown-item" href="/favourites">Favoritos</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Plantas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/list">Plantas</a></li>
             <li><a class="dropdown-item" href="/esquejes">Esquejes</a></li>
             <li><a class="dropdown-item" href="/tips">Consejos</a></li>
-            <li><a class="dropdown-item" href="/list">Plantas</a></li>
           </ul>
         </li>
                 <li class="nav-item">

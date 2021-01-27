@@ -9,6 +9,10 @@
   <h2>Bienvenid@ a tu perfil</h2>
   <h3>{{ user.username }}</h3>
   <img alt="" src="{image}">
+<!--<form action="/profile" method="POST" enctype="multipart/form-data" >
+    <label for="name">Imagen</label>
+    <input type="file" name="image" id="image"  multiple>
+</form>-->
   <a href="/favourites" class="fav">Favoritos</a>
  </div>
  </div>
@@ -19,14 +23,16 @@
 <div class="plants">
 
 {{#each user.createdPlants}}
-<div id="listplant">
-Nombre: {{name}}
+<div id="listplant" class="listprofile">
+<h3>{{name}}</h3>
 <img alt="" src="{{image}}">
-Descripción: {{description}}
+<p>{{description}}</p>
 <p>
 Autor: {{author.username}}
 </p>
-<a href="/plant-detail/{{_id}}">Editar</a>
+<div  class="editar">
+<a  href="/plant-detail/{{_id}}">Editar</a>
+</div>
 {{> deletePlant}}
 </div>
 {{/each}}

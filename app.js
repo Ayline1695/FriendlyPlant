@@ -67,10 +67,12 @@ app.use(function (req, res, next) {
  const usersRouter = require('./routes/users.route');
  const plantsRouter = require('./routes/plants.route');
  const authRouter = require('./routes/auth.route');
+ const reviewRouter = require('./routes/review.route')
  app.use('/', indexRouter);
  app.use('/', usersRouter);
  app.use('/', authRouter);
  app.use('/', plantsRouter);
+ app.use('/',reviewRouter);
 
 
 

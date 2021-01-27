@@ -8,6 +8,7 @@
 <div class="plants">
 {{#each plants}}
 <div id="listplant">
+<div class="anyplant">
 <h3 id="">{{name}}</h3>
 <div class="container_favorite">
 <!--Valor favorite: {{isFavorite}}
@@ -23,7 +24,10 @@ id: {{_id}}-->
 {{/if}}
 </div>
 <img alt="" src="{{image}}">
+</div>
+<div class="editbutton">
 <a href="/list/{{_id}}">Ver más</a>
+</div>
 </div>
 {{/each}}
 </div>

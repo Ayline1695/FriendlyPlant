@@ -13,15 +13,18 @@
 </div>
 </div>
 <!-- Formulario para comentar la planta -->
-<h5>Envia un mensaje al usuario!</h5>
-<div class="comentario">
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<div>
+{{#each review.reviews}}
+   <p>{{reviews.message}}</p>
+   <p>{{reviews.author}}</p>
+{{/each}}
 </div>
-<div class="mb-3">
+
+<h5>Envia un mensaje a {{author.username}}!</h5>
+<div class="comentario">
+  <form action='/list/{{_id}}' method='POST'  enctype="multipart/form-data" >
   <label for="exampleFormControlTextarea1" class="form-label">Mensaje:</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
 <button type="submit" style="border: 1px solid #000;">Enviar mensaje</button>
+</form>
 </div>
