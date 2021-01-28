@@ -1,6 +1,7 @@
 <header class="home">
 	<div class="overlay">
 <h2 class="title">Detalles</h2>
+<p>Puedes dejar un comentario a <b>{{author.username}}</b></p>
 		</div>
 </header>
 
@@ -13,18 +14,20 @@
 </div>
 </div>
 <!-- Formulario para comentar la planta -->
-<div>
-{{#each review.reviews}}
-   <p>{{reviews.message}}</p>
-   <p>{{reviews.author}}</p>
+<div class="comentarios">
+  <h2>Comentarios</h2>
+{{#each reviews}}
+<div class="cadacomentario">
+<h6>{{review.author.username}}</h6>
+   <p>{{review.message}}</p>
+   </div>
 {{/each}}
-</div>
 
-<h5>Envia un mensaje a {{author.username}}!</h5>
 <div class="comentario">
-  <form action='/list/{{_id}}' method='POST'  enctype="multipart/form-data" >
-  <label for="exampleFormControlTextarea1" class="form-label">Mensaje:</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-<button type="submit" style="border: 1px solid #000;">Enviar mensaje</button>
+<h5>Envia un mensaje!</h5>
+  <form action='/list/{{_id}}/addreview' method='POST' >
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+<button type="submit" >Enviar</button>
 </form>
+</div>
 </div>

@@ -41,8 +41,14 @@ const getPlants = async (req,res)  => {
   const getPlant = async (req, res) => {
     try {
       const { plantId } = req.params;
-      const plants = await Plants.findById(plantId).populate("author");
-      console.log(plants);
+      const plants = await Plants.findById(plantId).populate([
+'author',
+        {
+          path: 'reviews',
+          populate: { path: 'review.author', model: 'User' }
+        }
+      ]);
+      console.log(plants.reviews);
       res.render("plants/details.hbs", plants);
     } catch (err) {
       console.log(err);
