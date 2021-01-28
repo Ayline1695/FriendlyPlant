@@ -3,12 +3,17 @@ const User = require("../models/user.model");
 const Plant = require("../models/Plants.model");
 
 
-const getReview = async (req,res)  => {
+const createReview = async (req,res)  => {
+    let plantId = req.params.plantId;
+    const authorId = req.session.currentUser._id
+    const {message} = req.body
     try{
 // create plant
-const plant = await Plant.create(req.body);
-const reviews = await Review.create({ plant: plant._id });
-res.render("plants/details.hbs", { plant, reviews });
+//const plant = await Plant.findById(plantId);
+const newReviews = await Review.create({ plant: plantId, "review.author": authorId, "review.message" : message });
+await User.findByIdAndUpdate(authorId,{$push: {reviews: newReviews._id}})
+await Plant.findByIdAndUpdate(plantId,{$push: {reviews: newReviews._id}})
+res.redirect(`/list/${plantId}`)
     }
     catch(err){
         console.error(err);
@@ -29,4 +34,4 @@ const review = await Review.findOne({ plant: plant._id }).lean();
 
     }catch(err){console.error(err)}
 }
-module.exports = { getReview, getReviewspage }
+module.exports = { createReview, getReviewspage }

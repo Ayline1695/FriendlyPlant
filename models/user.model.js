@@ -27,7 +27,10 @@ const userSchema = new Schema(
       default: [true, '/img/user.png'],
     },*/
     createdPlants: [ { type: Schema.Types.ObjectId, ref: "Plants" } ],
-    favoritesPlants: [ { type: Schema.Types.ObjectId, ref: "Plants" } ]
+    favoritesPlants: [ { type: Schema.Types.ObjectId, ref: "Plants" } ],
+    reviews:  [{ 
+      type: Schema.Types.ObjectId, 
+      ref: "Review" }],
   },
   {
     timestamps: true

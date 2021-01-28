@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {
-    getReview,getReviewspage
+    createReview,getReviewspage
   } = require("../controllers/review.controller");
 
 function isLoggedIn(req, res, next) {
@@ -10,8 +10,8 @@ function isLoggedIn(req, res, next) {
   }
 
 router
-.get("/list/:plantId", isLoggedIn, getReviewspage)
-.post("/list/:reviewId", isLoggedIn, getReview)
+//.get("/list/:reviewId", isLoggedIn, getReviewspage)
+.post("/list/:plantId/addreview", isLoggedIn, createReview)
 
 
 module.exports = router;

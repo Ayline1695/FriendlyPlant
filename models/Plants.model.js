@@ -6,8 +6,12 @@ image: String,
 description: String,
 author: { 
     type: Schema.Types.ObjectId, 
-    ref: "User" } 
-},{
+    ref: "User" } ,
+reviews:  [{ 
+    type: Schema.Types.ObjectId, 
+    ref: "Review" }],
+},
+{
     timestamps: true
 })
 

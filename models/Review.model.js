@@ -5,13 +5,13 @@ const reviewSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Plant",
     },
-    reviews: [
+    review: 
       {
         author: { 
           type: Schema.Types.ObjectId, 
           ref: "User" },
         message: String,
       },
-    ],})
+    })
 
 module.exports = model('Review', reviewSchema);
