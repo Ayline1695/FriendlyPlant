@@ -441,8 +441,13 @@ background-color: #4e7441;
 }
 
 
-@media only screen and (max-width: 1400px) {
-
+@media only screen and (max-width: 1200px) {
+    .home h1{
+        font-size: 45px;
+    }
+    .home h3{
+        font-size: 25px;
+    }
     /* Logo pagina principal */
     .logo-principal{
         max-width: 300px;
@@ -488,7 +493,7 @@ background-color: #4e7441;
         }
     
     }
-    @media only screen and (min-width: 1400px) {
+    @media only screen and (min-width: 1200px) {
         .logo-principal{
             max-width: 400px;
             width: 50%;
